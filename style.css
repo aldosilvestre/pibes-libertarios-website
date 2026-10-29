@@ -245,7 +245,6 @@ h3{font-family:Georgia,serif;font-weight:700;text-transform:none;font-variant:sm
 .p1 .flag{right:100%;transform-origin:right center;animation-delay:-1.6s}
 .p2 .flag{left:100%}
 .flag::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.28),rgba(255,255,255,.18) 14%,rgba(0,0,0,.22) 30%,rgba(255,255,255,.14) 48%,rgba(0,0,0,.25) 66%,rgba(255,255,255,.12) 82%,rgba(0,0,0,.28)) 0 0/200% 100%;mix-blend-mode:multiply;animation:ripple 4.5s linear infinite}
-.gadsden{background:url(assets/gadsden.svg) center/cover,#f5d000}
 .ancap{background:linear-gradient(to bottom right,#ffd60a 49.6%,#111 50.4%)}
 @keyframes wave{0%,100%{transform:perspective(40vh) rotateY(-12deg) skewY(-2deg)}50%{transform:perspective(40vh) rotateY(8deg) skewY(2deg)}}
 @keyframes ripple{to{background-position:-200% 0}}
@@ -255,8 +254,8 @@ h3{font-family:Georgia,serif;font-weight:700;text-transform:none;font-variant:sm
 @media (max-width:760px){.prop,.lamp-pool{display:none}}
 @media (prefers-reduced-motion:reduce){.flag,.flag::after,.lamp-pool{animation:none}}
 
-/* ===== FOTOS REALES (Wikimedia Commons, ver assets/photos/CREDITS.md) ===== */
-body::before{background:radial-gradient(ellipse at 16% 26%,rgba(255,220,150,.30),transparent 48%),radial-gradient(ellipse at 50% 55%,transparent 40%,rgba(0,0,0,.78) 100%),linear-gradient(rgba(20,10,2,.35),rgba(20,10,2,.35)),url(assets/photos/wood.jpg) center/cover!important;background-blend-mode:normal!important}
+/* ===== FOTOS REALES (créditos en assets/photos/CREDITS.md) ===== */
+body::before{background:radial-gradient(ellipse at 16% 26%,rgba(255,220,150,.30),transparent 48%),radial-gradient(ellipse at 50% 55%,transparent 40%,rgba(0,0,0,.78) 100%),linear-gradient(rgba(20,10,2,.35),rgba(20,10,2,.35))!important;background-blend-mode:normal!important}
 .board,.spine{background:linear-gradient(115deg,rgba(255,230,190,.10),transparent 40%,rgba(0,0,0,.35)),linear-gradient(rgba(90,45,15,.55),rgba(60,28,8,.55)),url(assets/photos/leather.jpg) center/cover!important;background-blend-mode:normal,multiply,normal!important}
 .spine{background:linear-gradient(90deg,rgba(0,0,0,.65),rgba(255,230,190,.12) 50%,rgba(0,0,0,.65)),linear-gradient(180deg,transparent 12%,rgba(0,0,0,.6) 12.3%,rgba(255,210,140,.35) 13.4%,transparent 13.8%,transparent 86%,rgba(0,0,0,.6) 86.3%,rgba(255,210,140,.35) 87.4%,transparent 87.8%),linear-gradient(rgba(90,45,15,.55),rgba(60,28,8,.55)),url(assets/photos/leather.jpg) center/cover!important;background-blend-mode:normal,normal,multiply,normal!important}
 .face.front.cover{background:linear-gradient(90deg,transparent 4.6%,rgba(0,0,0,.6) 4.9%,rgba(255,215,160,.25) 5.5%,transparent 6%),linear-gradient(125deg,rgba(255,235,200,.14),transparent 45%,rgba(0,0,0,.35)),linear-gradient(rgba(95,48,16,.5),rgba(60,28,8,.5)),url(assets/photos/leather.jpg) center/cover!important;background-blend-mode:normal,normal,multiply,normal!important}
@@ -273,9 +272,6 @@ body::before{background:radial-gradient(ellipse at 16% 26%,rgba(255,220,150,.30)
 .print span{position:absolute;bottom:1vh;left:0;right:0;text-align:center;font:italic 1.5vh "Segoe Script","Brush Script MT",cursive;color:#2a2a3a}
 .coins{width:30vh;left:3vw;bottom:5vh;transform:translateX(calc(var(--u) * -5vw)) rotate(-8deg) scaleY(.82)}
 .glasses{width:30vh;right:2vw;bottom:4vh;transform:translateX(calc(var(--u) * 5vw)) rotate(-10deg)}
-.credits{position:fixed;left:.8rem;bottom:.6rem;z-index:30;font:italic .7rem Georgia,serif;color:rgba(241,228,192,.55);text-decoration:none}
-.credits:hover{color:#f1e4c0}
-@media (max-width:760px){.credits{font-size:.6rem}}
 /* lentes bajo la luz de la lámpara; monedas a la derecha */
 .glasses{right:auto;left:3vw;bottom:3vh;width:32vh;transform:translateX(calc(var(--u) * -5vw)) rotate(14deg);filter:brightness(1.35) contrast(1.15) drop-shadow(1.2vh 1.6vh 1vh rgba(0,0,0,.7))}
 .coins{left:auto;right:3vw;bottom:5vh;transform:translateX(calc(var(--u) * 5vw)) rotate(6deg) scaleY(.82)}
@@ -291,7 +287,6 @@ body::before{background:radial-gradient(ellipse at 16% 26%,rgba(255,220,150,.30)
 .world .book{position:absolute;left:calc(var(--w) * -1);top:calc(var(--h) / -2);z-index:auto}
 .table{position:absolute;width:calc(var(--w) * 7.2);height:calc(var(--w) * 4.8);left:calc(var(--w) * -3.6);top:calc(var(--w) * -2.4);
   transform:translateZ(-8px);transform-style:preserve-3d;
-  background:url(assets/gen/desk.jpg) center/cover,url(assets/photos/wood.jpg) center/cover;
   -webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 60%,transparent 100%)}
 .table::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 22% 18%,rgba(255,214,140,.30),transparent 45%),radial-gradient(ellipse at 50% 50%,transparent 30%,rgba(0,0,0,.55) 75%);pointer-events:none}
 .item{position:absolute;transform-origin:center;filter:drop-shadow(.35vh .6vh .5vh rgba(0,0,0,.65))}
@@ -365,11 +360,11 @@ body::before{background:#0b0603!important}
 /* La foto de la mesa vive en el mismo plano 3D que el libro: comparten inclinación, escala y perspectiva. */
 .table{display:block;width:300vw;height:300vh;left:-150vw;top:-150vh;
   transform:translateZ(-8px) scale(var(--ts,1.4));
-  background:linear-gradient(rgba(170,80,25,.24),rgba(170,80,25,.24)),url(assets/photos/wood.jpg) center/110vw auto repeat,#28180d}
-/* la foto cubre el centro; al alejar la cámara se funde con la madera que continúa alrededor */
-.table::before{content:"";position:absolute;width:100vw;height:100vh;left:calc(50% - 50vw);top:calc(50% - 50vh);
+  background:#2a170b}
+/* la foto cubre siempre la pantalla; 4px de margen por lado donde cae el suavizado del borde, así no asoma una línea */
+.table::before{content:"";position:absolute;width:calc(100vw + 8px);height:calc(100vh + 8px);left:calc(50% - 50vw - 4px);top:calc(50% - 50vh - 4px);
   background:url("generated-images/ig_0573967fb04bdacc016ae2c77e455487d280e5854a844b25e2.png") center/cover no-repeat;
-  --f:calc(5% * (1 - var(--u,1)));
+  --f:max(4px, calc(5% * (1 - var(--u,1))));
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 var(--f),#000 calc(100% - var(--f)),transparent),linear-gradient(180deg,transparent,#000 var(--f),#000 calc(100% - var(--f)),transparent);
   -webkit-mask-composite:source-in;mask-composite:intersect;
   mask-image:linear-gradient(90deg,transparent,#000 var(--f),#000 calc(100% - var(--f)),transparent),linear-gradient(180deg,transparent,#000 var(--f),#000 calc(100% - var(--f)),transparent)}
@@ -408,6 +403,10 @@ body::before{background:#0b0603!important}
 .toc .lead{flex:1;min-width:1em;border-bottom:1.5px dotted rgba(70,45,20,.55)}
 .toc small{font-style:italic;font-size:.8em}
 .toc a:hover b,.toc a:focus-visible b{text-decoration:underline}
+/* colofón: créditos de las fotos al pie de la última página, como en un libro impreso */
+.colophon{margin-top:auto;font-size:.72em;line-height:1.5;display:flex;flex-direction:column;gap:.6em}
+.colophon ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:.25em}
+.colophon a{color:inherit;text-decoration-color:rgba(70,45,20,.4)}
 .pager{display:none;position:absolute;bottom:1.1rem;left:50%;transform:translateX(-50%);z-index:20;margin:0;font:italic .85rem Georgia,serif;letter-spacing:.1em;color:#f1e4c0;text-shadow:0 2px 6px #000;transition:opacity .4s;pointer-events:none}
 .shadow{
   transform:translateZ(-6px) translate(2.5%,3%)!important;

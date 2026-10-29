@@ -11,6 +11,13 @@ const LINKS = {
   youtube:  "https://www.youtube.com/channel/UCfD2R3DWhIXBH9ElsHcNIMQ",
   facebook: "https://www.facebook.com/pibes.libertarios.salta",
 };
+// Atribuciones exigidas por las licencias (detalle en assets/photos/CREDITS.md): [qué, autor, licencia, url licencia, fuente]
+const PHOTO_CREDITS = [
+  ["Cuero de la tapa", "D Sharon Pruitt / Pink Sherbet Photography", "CC BY 2.0", "https://creativecommons.org/licenses/by/2.0", "https://commons.wikimedia.org/wiki/File:Free_antique_leather_book_cover_texture_for_layers_(2978544161).jpg"],
+  ["Foto Gadsden", "NOBama NoMas", "CC BY-SA 2.0", "https://creativecommons.org/licenses/by-sa/2.0", "https://commons.wikimedia.org/wiki/File:Don%27t_Tread_on_Me_(3912792425).jpg"],
+  ["Papel", "autor desconocido", "dominio público", "", "https://commons.wikimedia.org/wiki/File:Old_paper4.jpg"],
+  ["Monedas", "Anonimski", "CC0", "http://creativecommons.org/publicdomain/zero/1.0/deed.en", "https://commons.wikimedia.org/wiki/File:Two_20kr_gold_coins.png"],
+];
 const SOCIAL = [
   ["Instagram", "@pibeslibertariossalta", LINKS.instagram],
   ["TikTok", "@pibeslibertariossalta", LINKS.tiktok],
@@ -85,6 +92,15 @@ const PAGES = [
         <a class="btn" href="${LINKS.beacons}" target="_blank" rel="noopener">Todos los links</a>
       </div>
       <p>Ayudanos a seguir creciendo.</p>` },
+  { cls: "ye", html: `
+      <div class="colophon">
+        <div class="kicker">Colofón</div><div class="rule"></div>
+        <p>Este libro fue compuesto por Pibes Libertarios Salta. Fotos de Wikimedia Commons:</p>
+        <ul>${PHOTO_CREDITS.map(([what, author, lic, licUrl, src]) => `
+          <li><a href="${src}" target="_blank" rel="noopener">${what}</a>: ${author}, ${licUrl ? `<a href="${licUrl}" target="_blank" rel="noopener">${lic}</a>` : lic}.</li>`).join("")}
+        </ul>
+        <p><a href="assets/photos/CREDITS.md" target="_blank" rel="noopener">Créditos completos</a></p>
+      </div>` },
 ];
 const FIN = { cls: "cover", title: "Fin", html: `
       <div class="frame">
