@@ -75,8 +75,7 @@ const PAGES = [
             <img data-member-photo="${m.id}" alt="Foto de ${m.name}" hidden>
           </div>
           <b>${m.name}</b><small>${m.role}</small>
-        </div>`).join("")}</div>
-      <div class="member-photo-tools"><button class="member-photo-edit" type="button">Fotos en GitHub</button><p class="member-photo-status" role="status" aria-live="polite">Las fotos se actualizan desde GitHub.</p></div>` },
+        </div>`).join("")}</div>` },
   { cls: "bk", html: `
       <div class="kicker">Capítulo V</div><h2>Sumate</h2><div class="rule"></div>
       <ol class="steps">
@@ -324,13 +323,12 @@ addEventListener("scroll", () => {
   }, 220);
 }, { passive: true });
 addEventListener("wheel", e => {
-  if ($("#member-photo-help").open) return;
   e.preventDefault();
   if (anim || Math.abs(e.deltaY) < 4) return;
   goTo(Math.round(target) + Math.sign(e.deltaY));
 }, { passive: false });
 addEventListener("keydown", e => {
-  if ($("#member-photo-help").open || e.target.closest("input,button,textarea,select")) return;
+  if (e.target.closest("input,button,textarea,select")) return;
   if (["ArrowRight","ArrowDown","PageDown"," "].includes(e.key)) { e.preventDefault(); goTo(Math.round(target) + 1); }
   if (["ArrowLeft","ArrowUp","PageUp"].includes(e.key)) { e.preventDefault(); goTo(Math.round(target) - 1); }
 });
@@ -340,7 +338,7 @@ let touch0 = null;
 addEventListener("touchstart", e => {
   touch0 = mobile && e.touches.length === 1 ? { x: e.touches[0].clientX, y: e.touches[0].clientY } : null;
 }, { passive: true });
-addEventListener("touchmove", e => { if (touch0 && !$("#member-photo-help").open) e.preventDefault(); }, { passive: false });
+addEventListener("touchmove", e => { if (touch0) e.preventDefault(); }, { passive: false });
 addEventListener("touchend", e => {
   if (!touch0) return;
   const dx = e.changedTouches[0].clientX - touch0.x, dy = e.changedTouches[0].clientY - touch0.y;

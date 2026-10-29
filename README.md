@@ -34,8 +34,10 @@ Para reemplazar una foto ya asociada, conservá su nombre y carpeta: no hace fal
 editar `members.js` otra vez. Un campo `photo` vacío conserva la silueta de ejemplo.
 Los nombres y roles se editan en ese mismo archivo.
 
-El botón **Fotos en GitHub** del libro muestra estas instrucciones. Desde un sitio
-publicado en el dominio predeterminado de Pages también permite abrir el repositorio.
+En el libro cada foto se muestra casi cuadrada (6:5) y recortada desde el centro:
+preferí fotos cuadradas con la cara centrada. Los nombres muy largos se cortan con "…". Si una foto no carga, el libro muestra la
+silueta y la consola del navegador indica qué ruta revisar.
+
 Solo quienes tengan permisos en GitHub pueden modificar las imágenes públicas.
 
 ## Cargar publicaciones

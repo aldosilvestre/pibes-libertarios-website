@@ -341,18 +341,17 @@ body::before{background:#0b0603!important}
 .leaf .card{background:linear-gradient(120deg,#f5edda,#e9ddc3);box-shadow:0 1px 2px rgba(60,35,10,.22),0 3px 5px -3px rgba(60,35,10,.3)}
 .leaf .card::before{background:rgba(194,167,104,.35);box-shadow:0 1px 1px rgba(60,35,10,.12);backdrop-filter:none;clip-path:polygon(1% 0,98% 2%,100% 98%,2% 100%)}
 .leaf .avatar{height:2.6em}
+/* Miembros: manda la foto (cuadrada y grande); nombre y rol quedan como un pie discreto */
 .members-page{gap:.5em;padding:1.5em 1.6em}
-.members-page .members{gap:.6em}
-.members-page .member{padding:.4em .4em .5em}
-.members-page .avatar{height:2em}
+.members-page .members{grid-template-columns:repeat(2,minmax(0,1fr));gap:.9em .8em;width:90%;margin:.2em auto 0}
+.members-page .member{padding:.35em .35em .45em;display:flex;flex-direction:column;gap:.15em}
+.members-page .avatar{height:auto;aspect-ratio:6/5;margin:0 0 .25em}
+.members-page .member b{font-size:.68em;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.members-page .member small{font-size:.55em;line-height:1.2;opacity:.65;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .member-photo{position:relative;display:block;overflow:hidden}
 .member-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .member-photo img[hidden]{display:none}
 .member-photo.has-photo{background:#eee4ce;filter:none}
-.member-photo-tools{display:flex;flex-direction:column;gap:.3em;margin-top:auto}
-.member-photo-edit{align-self:flex-start;min-height:34px;padding:.35em .8em;border:1px solid #a89878;border-radius:2px;background:#eee4ce;color:#38291a;font:italic .72em Georgia,serif;cursor:pointer}
-.member-photo-edit:focus-visible{outline:2px solid #75572a;outline-offset:2px}
-.member-photo-status{font-size:.62em;line-height:1.35;min-height:2.7em}
 .ribbon{background:repeating-linear-gradient(90deg,rgba(65,41,13,.15) 0 1px,transparent 1px 3px),linear-gradient(90deg,#7d602b,#b89a58 48%,#81612b);box-shadow:none}
 
 /* La cámara controla la proyección caballera y la perspectiva durante la apertura. */
@@ -417,18 +416,5 @@ body::before{background:#0b0603!important}
   .pager{display:block}
   .dots{display:none}                 /* en celular se navega deslizando; el indicador "3 / 10" reemplaza a los puntos */
   .hint{font-size:.85rem;letter-spacing:.04em;white-space:nowrap;bottom:2.2rem}
-  .leaf .avatar{height:2em}
-  .members-page .avatar{height:1.6em}
 }
 
-#member-photo-help{margin:auto;width:min(92vw,540px);max-height:90vh;overflow:auto;border:1px solid #8b734d;border-radius:6px;padding:1.5rem;background:#f6eedc;color:#2a2117;box-shadow:0 16px 48px rgba(17,10,6,.4);font-family:Georgia,serif}
-#member-photo-help::backdrop{background:rgba(17,10,6,.72)}
-#member-photo-help form{display:grid;gap:1rem}
-#member-photo-help h2{font:600 1.3rem/1.2 Georgia,serif;text-transform:none}
-#member-photo-help p,#member-photo-help li{font-size:.95rem;line-height:1.5;text-shadow:none}
-#member-photo-help ol{padding-left:1.2rem;display:grid;gap:.8rem}
-#member-photo-help code{font-size:.9em;overflow-wrap:anywhere}
-.photo-help-actions{display:flex;justify-content:flex-end;gap:.5rem;flex-wrap:wrap}
-.photo-help-actions button,.photo-help-actions a:not([hidden]){display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.6rem .8rem;border:1px solid #8b734d;border-radius:3px;background:#eee4ce;color:#2a2117;font:inherit;text-decoration:none;cursor:pointer}
-.photo-help-actions button{background:#49321b;color:#fff4dd}
-#member-photo-help :focus-visible{outline:2px solid #75572a;outline-offset:2px}
