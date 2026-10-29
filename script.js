@@ -6,23 +6,45 @@ const LINKS = {
   telegram: "https://t.me/pibeslibertariossalta",
   cafecito: "https://cafecito.app/pibeslibertariossla",
   beacons:  "https://beacons.ai/pibeslibertariossalta",
+  instagram: "https://instagram.com/pibeslibertariossalta",
+  tiktok:   "https://tiktok.com/@pibeslibertariossalta",
+  youtube:  "https://www.youtube.com/channel/UCfD2R3DWhIXBH9ElsHcNIMQ",
+  facebook: "https://www.facebook.com/pibes.libertarios.salta",
 };
-const POSTS = [
-  { date: "08/10/2026", title: "Verdad y justicia por Vicente Cordeyro",
-    text: "Esto no tiene que seguir repitiéndose. Por las vidas y las familias víctimas del estado provincial salteño: marchemos juntos." },
-  { date: "25/09/2026", title: "La batalla cultural, ahora más que nunca",
-    text: "Reunión para compartir ideas, conocernos y organizarnos. La batalla cultural se da entre todos." },
+const SOCIAL = [
+  ["Instagram", "@pibeslibertariossalta", LINKS.instagram],
+  ["TikTok", "@pibeslibertariossalta", LINKS.tiktok],
+  ["YouTube", "Pibes Libertarios Salta", LINKS.youtube],
+  ["Facebook", "pibes.libertarios.salta", LINKS.facebook],
+  ["Telegram", "grupo público", LINKS.telegram],
 ];
+/* Publicaciones: se editan en posts.json (title, image, url; date y text son opcionales).
+   Se generan tantas páginas como hagan falta, en el orden del archivo. */
+const POSTS = await fetch("posts.json", { cache: "no-cache" })
+  .then(r => r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`)))
+  .then(d => Array.isArray(d) ? d.filter(p => p && p.title) : Promise.reject(new Error("no es una lista")))
+  .catch(err => { console.error("No se pudo cargar posts.json:", err); return []; });
+const POSTS_FIRST = 1, POSTS_PER_PAGE = 2;
+// posts.json es contenido externo: se escapa el texto y solo se aceptan enlaces http(s) o rutas relativas
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+const safeUrl = u => (u = String(u ?? "").trim()) && (/^https?:\/\//i.test(u) || !/^[a-z][\w+.-]*:/i.test(u)) ? esc(u) : "";   // la primera página lleva el título del capítulo, por eso entra una sola
 /* Cada cara = una página. 'ye' amarilla / 'bk' negra. Orden: frente, dorso, frente, dorso... */
-const FACES = [
+const PAGES = [
   { cls: "cover", title: "Portada", html: `
       <div class="frame">
         <div class="small foil">SALTA · ARGENTINA</div>
-        <svg class="orn" viewBox="0 0 120 80"><circle cx="60" cy="40" r="14"/><path d="M60 14v-8M60 74v-8M34 40h-8M94 40h-8M41 21l-6-6M85 59l6 6M79 21l6-6M35 65l6-6"/><path d="M10 40c14 0 22-6 26-14M110 40c-14 0-22-6-26-14M10 40c14 0 22 6 26 14M110 40c-14 0-22 6-26 14"/></svg>
-        <h1 class="foil">Pibes<br>Libertarios</h1>
+        <div class="emblem" role="img" aria-label="Símbolo de Pibes Libertarios"><i></i></div>
+        <h1 class="sr">Pibes Libertarios</h1>
         <div class="sub foil">y su <b>batalla cultural</b></div>
         <div class="small foil" style="margin-top:.8em">· CRÓNICAS DE LA LIBERTAD · LIBRO I ·</div>
       </div>` },
+  { cls: "ye", title: "Seguinos", html: `
+      <div class="kicker">Antes de empezar</div><h2>Seguinos</h2><div class="rule"></div>
+      <p>Encontranos en nuestras redes:</p>
+      <ul class="toc">${SOCIAL.map(([name, handle, url]) => `
+        <li><a href="${url}" target="_blank" rel="noopener"><b>${name}</b><span class="lead"></span><small>${handle}</small></a></li>`).join("")}
+      </ul>
+      <a class="btn" href="${LINKS.beacons}" target="_blank" rel="noopener" style="margin-top:auto;align-self:flex-start">Todos los links</a>` },
   { cls: "bk", html: `
       <div class="kicker">Prólogo</div><div class="rule"></div>
       <div class="big-quote">“No seguimos <b>personas</b>,<br>seguimos <b>ideas</b>.”</div>
@@ -37,15 +59,7 @@ const FACES = [
       <div class="card"><h3>Ideas sobre personas</h3><p>Seguimos ideas, no caudillos.</p></div>
       <div class="card"><h3>Batalla cultural</h3><p>Antes de cambiar leyes, hay que cambiar la cabeza.</p></div>
       <div class="card"><h3>Verdad y justicia</h3><p>La libertad empieza con justicia.</p></div>` },
-  { cls: "ye", title: "Publicaciones", html: `
-      <div class="kicker">Capítulo III</div><h2>Publicaciones</h2><div class="rule"></div>
-      ${postCard(POSTS[0])}
-      <p style="margin-top:auto">Seguí leyendo en la página siguiente →</p>` },
-  { cls: "bk", html: `
-      <div class="kicker">Capítulo III · cont.</div>
-      ${postCard(POSTS[1])}
-      <p>Más novedades, material audiovisual y convocatorias en nuestro Telegram.</p>
-      <a class="btn" href="${LINKS.telegram}" target="_blank" rel="noopener">Ver más novedades</a>` },
+  ...postFaces(),
   { cls: "ye", title: "Miembros", html: `
       <div class="kicker">Capítulo IV</div><h2>Miembros</h2><div class="rule"></div>
       <div class="members">${MEMBERS.map(m => `
@@ -71,16 +85,39 @@ const FACES = [
         <a class="btn" href="${LINKS.beacons}" target="_blank" rel="noopener">Todos los links</a>
       </div>
       <p>Ayudanos a seguir creciendo.</p>` },
-  { cls: "cover", title: "Fin", html: `
+];
+const FIN = { cls: "cover", title: "Fin", html: `
       <div class="frame">
         <div class="small foil">FIN DEL LIBRO I</div>
         <svg class="orn" viewBox="0 0 120 80"><circle cx="60" cy="40" r="14"/><path d="M60 14v-8M60 74v-8M34 40h-8M94 40h-8M41 21l-6-6M85 59l6 6M79 21l6-6M35 65l6-6"/><path d="M10 40c14 0 22-6 26-14M110 40c-14 0-22-6-26-14M10 40c14 0 22 6 26 14M110 40c-14 0-22 6-26 14"/></svg>
         <h1 class="foil" style="font-size:1.9em!important">La batalla<br>continúa</h1>
         <div class="sub foil">Viva la <b>libertad</b></div>
         <a class="btn" href="#top" id="restart">Volver al inicio</a>
-      </div>` },
-];
-function postCard(p){ return `<div class="card"><time>${p.date}</time><h3>${p.title}</h3><p>${p.text}</p></div>`; }
+      </div>` };
+// Las caras van de a dos por hoja: la contratapa tiene que caer en un dorso, si no se agrega una página en blanco antes.
+const FACES = [...PAGES, ...(PAGES.length % 2 ? [] : [{ cls: "ye", html: "" }]), FIN];
+
+function postFaces() {
+  const head = `<div class="kicker">Capítulo III</div><h2>Publicaciones</h2><div class="rule"></div>`;
+  const tail = `<p>Más novedades, material audiovisual y convocatorias en nuestro Telegram.</p>
+      <a class="btn" href="${LINKS.telegram}" target="_blank" rel="noopener">Ver más novedades</a>`;
+  if (!POSTS.length) return [{ cls: "ye", title: "Publicaciones", html: `${head}<p>Pronto vas a encontrar acá nuestras publicaciones.</p>${tail}` }];
+  const pages = [];
+  for (let i = 0, n = POSTS_FIRST; i < POSTS.length; i += n, n = POSTS_PER_PAGE) {
+    const last = i + n >= POSTS.length;
+    pages.push({ cls: "ye", title: pages.length ? undefined : "Publicaciones", html:
+      (pages.length ? `<div class="kicker">Capítulo III · cont.</div>` : head) + POSTS.slice(i, i + n).map(postCard).join("") +
+      (last ? tail : `<p style="margin-top:auto">Seguí leyendo en la página siguiente →</p>`) });
+  }
+  return pages;
+}
+function postCard(p) {
+  const img = safeUrl(p.image), url = safeUrl(p.url);
+  const body = (img ? `<img src="${img}" alt="" loading="lazy">` : "") +
+    `<div>${p.date ? `<time>${esc(p.date)}</time>` : ""}<h3>${esc(p.title)}</h3>${p.text ? `<p>${esc(p.text)}</p>` : ""}</div>`;
+  const cls = `card post${img ? "" : " noimg"}`;
+  return url ? `<a class="${cls}" href="${url}" target="_blank" rel="noopener">${body}</a>` : `<div class="${cls}">${body}</div>`;
+}
 
 /* ====== MOTOR DEL LIBRO ====== */
 const $ = s => document.querySelector(s);

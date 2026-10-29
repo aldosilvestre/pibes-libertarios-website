@@ -38,6 +38,34 @@ El botón **Fotos en GitHub** del libro muestra estas instrucciones. Desde un si
 publicado en el dominio predeterminado de Pages también permite abrir el repositorio.
 Solo quienes tengan permisos en GitHub pueden modificar las imágenes públicas.
 
+## Cargar publicaciones
+
+Las noticias del capítulo **Publicaciones** se leen de `posts.json`, en el orden del
+archivo (poné la más nueva primero). El libro genera solo las páginas que hagan falta:
+una noticia en la primera página y dos en cada página siguiente.
+
+```json
+[
+  {
+    "title": "Título de la noticia",
+    "image": "assets/posts/marcha.jpg",
+    "url": "https://t.me/pibeslibertariossalta",
+    "date": "28/10/2026",
+    "text": "Resumen corto."
+  }
+]
+```
+
+- `title` es obligatorio. `image`, `url`, `date` y `text` son opcionales.
+- `image` puede ser una ruta del repositorio (por ejemplo una foto subida a
+  `assets/posts/`) o una dirección `https://`.
+- `url` es a dónde lleva la tarjeta al tocarla; se abre en otra pestaña.
+- El título se recorta a dos líneas y el texto a tres, para que la tarjeta siempre
+  entre en la página.
+- Respetá el formato JSON: comillas dobles y comas entre noticias, sin coma después
+  de la última. Si el archivo tiene un error, el libro muestra la página sin noticias
+  y el error aparece en la consola del navegador.
+
 ## Probar localmente
 
 Desde esta carpeta, ejecutá un servidor estático, por ejemplo:
