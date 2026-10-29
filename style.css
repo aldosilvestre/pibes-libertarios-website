@@ -1,7 +1,7 @@
 :root{
   --y:#ffd60a; --y2:#ffb800; --k:#0a0a0a; --k2:#151515;
   --w:min(40vw, 46vh);          /* ancho de una página */
-  --h:calc(var(--w) * 1.36);
+  --h:calc(var(--w) * 1.3333);  /* libro de 15 x 20 cm */
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:auto}
@@ -368,18 +368,38 @@ body::before{background:#0b0603!important}
 .ribbon{background:repeating-linear-gradient(90deg,rgba(65,41,13,.15) 0 1px,transparent 1px 3px),linear-gradient(90deg,#7d602b,#b89a58 48%,#81612b);box-shadow:none}
 
 /* La cámara controla la proyección caballera y la perspectiva durante la apertura. */
-.stage{
-  perspective:none;
-  background:#28180d url("generated-images/ig_0573967fb04bdacc016ae2c77e455487d280e5854a844b25e2.png") center/cover no-repeat;
-}
-.table{display:none}
+.stage{perspective:none;background:#0b0603}
+/* La foto de la mesa vive en el mismo plano 3D que el libro: comparten inclinación, escala y perspectiva. */
+.table{display:block;width:300vw;height:300vh;left:-150vw;top:-150vh;
+  transform:translateZ(-8px) scale(calc(1.4 - .4 * var(--u,1)));
+  background:linear-gradient(rgba(170,80,25,.24),rgba(170,80,25,.24)),url(assets/photos/wood.jpg) center/110vw auto repeat,#28180d}
+/* la foto cubre el centro; al alejar la cámara se funde con la madera que continúa alrededor */
+.table::before{content:"";position:absolute;width:100vw;height:100vh;left:calc(50% - 50vw);top:calc(50% - 50vh);
+  background:url("generated-images/ig_0573967fb04bdacc016ae2c77e455487d280e5854a844b25e2.png") center/cover no-repeat;
+  --f:calc(5% * (1 - var(--u,1)));
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 var(--f),#000 calc(100% - var(--f)),transparent),linear-gradient(180deg,transparent,#000 var(--f),#000 calc(100% - var(--f)),transparent);
+  -webkit-mask-composite:source-in;mask-composite:intersect;
+  mask-image:linear-gradient(90deg,transparent,#000 var(--f),#000 calc(100% - var(--f)),transparent),linear-gradient(180deg,transparent,#000 var(--f),#000 calc(100% - var(--f)),transparent)}
+.table::after{display:none}
+/* decoraciones sobre la mesa: libertad (Gadsden), propiedad y dinero sano (oro), sabiduría (Sapere aude) */
+/* medidas reales: libro 15 cm = 1 w -> foto instantánea ~8,5 cm, nota ~7 cm, moneda de 20 kr ~2,3 cm */
+.table .item{opacity:calc(1 - var(--fc,0));filter:sepia(.3) saturate(1.15) brightness(.86) drop-shadow(.3vh .5vh .4vh rgba(0,0,0,.6))}
+.table .item.print{width:calc(var(--w) * .56);left:calc(50% + var(--w) * .85);top:calc(50% - var(--w) * .45);transform:rotate(7deg)}
+.table .item.coins{width:calc(var(--w) * .36);left:calc(50% + var(--w) * .85);top:calc(50% + var(--w) * .3);transform:rotate(-10deg)}
+.table .item.note{width:calc(var(--w) * .46);left:calc(50% - var(--w) * 1.08);top:calc(50% - var(--w) * .02);padding:calc(var(--w) * .05) calc(var(--w) * .03);transform:rotate(-6deg);text-align:center;
+  background:linear-gradient(rgba(250,240,214,.55),rgba(250,240,214,.55)),url(assets/photos/paper.jpg) center/cover;color:#2a1d0f;font-family:Georgia,serif;display:flex;flex-direction:column;gap:calc(var(--w) * .015)}
+.note b{font:italic 600 calc(var(--w) * .075)/1.1 Georgia,serif;letter-spacing:.02em}
+.note i{font-size:calc(var(--w) * .033);opacity:.75}
 .stage::before{background:radial-gradient(ellipse at 50% 50%,transparent 45%,rgba(0,0,0,.24))!important}
 .shadow{
   transform:translateZ(-6px) translate(2.5%,3%)!important;
   filter:blur(12px);
 }
 @media (max-width:760px){
-  .stage{background-position:20% center}
+  .table::before{background-position:20% center}
+  /* en móvil el mundo se escala a .6 -> .8: la foto compensa para seguir cubriendo la pantalla, y los objetos (fuera de cuadro) se ocultan */
+  .table{transform:translateZ(-8px) scale(calc(1.9 - .65 * var(--u,1)))}
+  .table .item{display:none}
   .leaf .avatar{height:2em}
   .members-page .avatar{height:1.6em}
 }

@@ -193,10 +193,13 @@ function render(force) {
   // el libro cerrado queda centrado; abierto, el lomo queda en el medio
   const x = mobile ? 0 : -.5 + .5 * ease(clamp(fc)) + .5 * ease(clamp(fc - (N - 1)));
   // La vista oblicua inicial sigue la mesa; el primer scroll acerca y endereza el libro.
-  const depth = Math.SQRT1_2 * (1 - u);
-  world.style.transform = `scale(${mobile ? lerp(.66, .8, u) : lerp(.86, 1, u)}) matrix3d(1,0,0,0,0,1,0,0,${-depth},${-depth},1,${-u / 2600},0,0,0,1) rotateX(${30 * (1 - u)}deg) rotateZ(${-14 * (1 - u)}deg)`;
-  book.style.transform = `translateX(calc(var(--w) * ${x}))`;
+  // Perspectiva real (sin shear): la mesa se inclina como vista desde una silla y el grosor del libro proyecta solo.
+  world.style.transform = `scale(${mobile ? lerp(.6, .8, u) : lerp(.8, 1, u)}) matrix3d(1,0,0,0,0,1,0,0,0,0,1,${-1 / 2400},0,0,0,1) rotateX(${12 * (1 - u)}deg)`;
+  // El libro queda apoyado en ángulo sobre la mesa; la mesa (foto) no rota, así cubre siempre la pantalla.
+  book.style.transform = `rotateZ(${-9 * (1 - u)}deg) translateX(calc(var(--w) * ${x}))`;
   book.style.setProperty("--open", u);
+  world.style.setProperty("--u", u);
+  world.style.setProperty("--fc", clamp(fc));
 
   $("#hint").style.opacity = cur < .05 ? 1 : 0;
   const at = Math.round(cur);
