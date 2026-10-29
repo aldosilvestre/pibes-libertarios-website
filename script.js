@@ -91,6 +91,7 @@ const lerp = (a, b, t) => a + (b - a) * t;
 const ease = t => t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
 const reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
 const INTRO = 1;      // primer scroll: el libro se acerca y queda de frente, sin pasar hojas
+const WORLD0 = { desktop: .8, mobile: .6 }; // escala del mundo con el libro cerrado en el primer slide
 const THICK = .075;   // grosor del libro respecto del ancho de una página
 let leaves = [], N = 0, T = 0, mobile = false, cur = 0, target = 0, perFlip = 1, th = 0, snapTimer, anim = null, E = {};
 
@@ -121,19 +122,21 @@ function build() {
   for (const k in E) E[k] = book.querySelector(E[k]);
   leaves = [];
   const pairs = [];
-  if (mobile) FACES.forEach(f => pairs.push([f, null]));
-  else for (let i = 0; i < FACES.length; i += 2) pairs.push([FACES[i], FACES[i+1] || null]);
+  // Celular usa el mismo libro de doble página que escritorio; la cámara encuadra una página a la vez.
+  for (let i = 0; i < FACES.length; i += 2) pairs.push([FACES[i], FACES[i+1] || null]);
   pairs.forEach(([a, b], i) => {
-    const leaf = makeLeaf(a, b, mobile ? i + 1 : i*2 + 1);
+    const leaf = makeLeaf(a, b, i*2 + 1);
     leaf.addEventListener("click", e => {
-      if (e.target.closest("a,button,label,input")) return;
+      if (mobile || e.target.closest("a,button,label,input")) return;
       goTo(Math.round(target) + (cur - INTRO > i + .5 ? -1 : 1));
     });
     book.append(leaf); leaves.push(leaf);
   });
-  N = mobile ? leaves.length - 1 : leaves.length;
-  T = N + INTRO;
-  const wpx = mobile ? book.offsetWidth : book.offsetWidth / 2;
+  N = leaves.length;
+  // celular: portada, luego por cada doble página "izquierda" y "derecha", y la contratapa = 2N vistas
+  T = INTRO + (mobile ? 2 * N - 1 : N);
+  const wpx = book.offsetWidth / 2;
+  $("#hint").innerHTML = mobile ? 'Deslizá para abrir el libro <span>←</span>' : 'Scrolleá para abrir el libro <span>↓</span>';
   th = wpx * THICK / N;
   book.style.setProperty("--d", (th * N) + "px");
   perFlip = innerHeight * .75;
@@ -148,15 +151,43 @@ function build() {
     b.onclick = () => goTo(pos);
     dotsEl.append(b);
   });
+  layoutDecor(wpx);
   refreshMemberPhotos();
   render(true);
+}
+
+// Decoraciones de la mesa: posiciones [x, y, tamaño, giro°] en anchos de página, centradas en el libro.
+// Con pantallas anchas van a los costados; en pantallas altas (tablet vertical, celular) arriba y abajo.
+const DECOR_SIDES = { print: [1.15, -.35, .6, 7], coins: [1, .5, .34, -10], note: [-1.05, .15, .5, -6] };
+const DECOR_STACK = { print: [.3, -1.3, .6, 6], note: [.2, 1.12, .5, -5], coins: [.5, 1.35, .34, -10] };
+function layoutDecor(wpx) {
+  const s0 = mobile ? WORLD0.mobile : WORLD0.desktop;      // escala del mundo con el libro cerrado
+  const vx = innerWidth / 2 / (wpx * s0), vy = innerHeight / 2 / (wpx * s0); // mitad visible, en anchos de página
+  const sides = vx >= 1.65, L = structuredClone(sides ? DECOR_SIDES : DECOR_STACK);
+  if (!sides) {                                            // dejar libre el cartel "Scrolléa" al pie de la pantalla
+    const yb = vy - 90 / (wpx * s0);
+    L.note[1] = Math.min(L.note[1], yb - .3); L.coins[1] = Math.min(L.coins[1], yb - .12);
+    const free = vy - .85;                                  // alto libre sobre el libro: la foto se achica para entrar
+    L.print[2] = Math.min(.6, free); L.print[1] = -(.8 + free / 2);
+  }
+  const k = s0, vx1 = vx * k, vy1 = vy * k; // mitad visible al terminar el primer scroll (libro de frente)
+  for (const name in L) {
+    const el = world.querySelector(".item." + name), [x, y, s, r] = L[name];
+    const hw = s / 2 + .05, hh = s * (name === "coins" ? .28 : name === "note" ? .35 : .45) + .03; // medio alto aprox.
+    const fits = vx1 - .12 >= Math.abs(x) + hw && vy1 - .05 >= Math.abs(y) + hh;
+    el.hidden = (name === "print" && s < .38) || Math.abs(x) + hw > vx - .1 || Math.abs(y) + hh > vy - .02 // muy chica o no entra en pantalla
+      || (Math.abs(x) - hw < .58 && Math.abs(y) - hh < .78);                   // pisaría al libro
+    el.dataset.fade = fits ? "fc" : "u";                     // si al acercarse el libro quedaría cortada, se desvanece en el primer scroll
+    el.style.setProperty("--x", x); el.style.setProperty("--y", y);
+    el.style.setProperty("--s", s); el.style.setProperty("--r", r);
+  }
 }
 
 // Cada vuelta dura ~1.3 s con aceleración y frenado, aunque el scroll sea un solo gesto
 function goTo(p) {
   const to = clamp(p, 0, T) * perFlip, from = scrollY;
   if (Math.abs(to - from) < 1) return;
-  const d = reduce ? 1 : 1300 + Math.abs(to - from) / perFlip * 220;
+  const d = reduce ? 1 : (mobile ? 950 : 1300) + Math.abs(to - from) / perFlip * 220;
   anim = { from, to, d, t0: performance.now() };
 }
 
@@ -166,7 +197,15 @@ function render(force) {
   cur = (reduce || force || anim) ? p : cur + (p - cur) * .09;
   if (Math.abs(p - cur) < .0005) cur = p;
 
-  const fc = clamp(cur - INTRO, 0, N);           // páginas ya pasadas (continuo)
+  // En celular cada paso es: girar una hoja (la cámara la acompaña hasta la página izquierda)
+  // o correr la vista de la página izquierda a la derecha. cam = punto del libro centrado, en anchos de página desde el lomo.
+  let fc = clamp(cur - INTRO, 0, N), cam = .5, g = 0;
+  if (mobile) {
+    g = clamp(cur - INTRO, 0, 2 * N - 1);
+    const i = Math.min(Math.floor(g), 2 * N - 2), f = g - i, k = Math.ceil(i / 2);
+    fc = i % 2 ? k : k + f;
+    cam = i % 2 ? lerp(-.5, .5, ease(f)) : lerp(.5, -.5, ease(f));
+  }
   const u = ease(clamp(cur / INTRO));            // 0 = apoyado en la mesa, 1 = de frente a la pantalla
   const endFade = 1 - clamp((fc - (N - 1)) * 3); // contraportada: el lado derecho desaparece
 
@@ -175,7 +214,6 @@ function render(force) {
     const z = lerp(th * (N - i), th * (i + 1), t) + lift * th * 6;
     leaf.style.transform = `translateZ(${z}px) rotateY(${-180 * t}deg)`;
     leaf.style.zIndex = t < .5 ? N + 2 - i : i + 1;
-    leaf.style.visibility = (mobile && t >= 1) ? "hidden" : "visible";
     leaf.style.setProperty("--turn-light", 1 - lift * .22);
   });
 
@@ -183,25 +221,30 @@ function render(force) {
   const Dr = th * (N - fc), Dl = th * fc;
   E.er.style.width = Dr + "px"; E.etr.style.height = Dr + "px"; E.ebr.style.height = Dr + "px";
   E.el.style.width = Dl + "px"; E.etl.style.height = Dl + "px"; E.ebl.style.height = Dl + "px";
-  const rOp = mobile ? 1 : endFade, lOp = mobile ? 0 : clamp(fc * 3);
+  const rOp = endFade, lOp = clamp(fc * 3);
   [E.er, E.etr, E.ebr, E.br, E.sr].forEach(e => e.style.opacity = rOp);
   [E.el, E.etl, E.ebl, E.bl, E.sl].forEach(e => e.style.opacity = lOp);
   E.spine.style.opacity = 1 - clamp(fc * 2);
-  E.rib.style.opacity = mobile ? 0 : endFade;
+  E.rib.style.opacity = endFade;
   E.bl.style.setProperty("--lp", endFade);
 
   // el libro cerrado queda centrado; abierto, el lomo queda en el medio
-  const x = mobile ? 0 : -.5 + .5 * ease(clamp(fc)) + .5 * ease(clamp(fc - (N - 1)));
+  const x = mobile ? -cam : -.5 + .5 * ease(clamp(fc)) + .5 * ease(clamp(fc - (N - 1)));
   // La vista oblicua inicial sigue la mesa; el primer scroll acerca y endereza el libro.
   // Perspectiva real (sin shear): la mesa se inclina como vista desde una silla y el grosor del libro proyecta solo.
-  world.style.transform = `scale(${mobile ? lerp(.6, .8, u) : lerp(.8, 1, u)}) matrix3d(1,0,0,0,0,1,0,0,0,0,1,${-1 / 2400},0,0,0,1) rotateX(${12 * (1 - u)}deg)`;
+  const ws = mobile ? lerp(WORLD0.mobile, 1, u) : lerp(WORLD0.desktop, 1, u);
+  world.style.transform = `scale(${ws}) matrix3d(1,0,0,0,0,1,0,0,0,0,1,${-1 / 2400},0,0,0,1) rotateX(${12 * (1 - u)}deg)`;
   // El libro queda apoyado en ángulo sobre la mesa; la mesa (foto) no rota, así cubre siempre la pantalla.
   book.style.transform = `rotateZ(${-9 * (1 - u)}deg) translateX(calc(var(--w) * ${x}))`;
   book.style.setProperty("--open", u);
   world.style.setProperty("--u", u);
+  world.style.setProperty("--ts", lerp(1.12, 1, u) / ws);   // la foto de la mesa mantiene una escala neta que cubre la pantalla
   world.style.setProperty("--fc", clamp(fc));
 
   $("#hint").style.opacity = cur < .05 ? 1 : 0;
+  const pager = $("#pager");
+  pager.textContent = `${Math.round(g) + 1} / ${2 * N}`;
+  pager.style.opacity = mobile && cur > INTRO - .05 ? 1 : 0;
   const at = Math.round(cur);
   dotsEl.querySelectorAll("button").forEach((b, k, all) => {
     const nxt = all[k+1] ? +all[k+1].dataset.p : Infinity;
@@ -239,6 +282,23 @@ addEventListener("keydown", e => {
   if (["ArrowLeft","ArrowUp","PageUp"].includes(e.key)) { e.preventDefault(); goTo(Math.round(target) - 1); }
 });
 document.addEventListener("click", e => { if (e.target.id === "restart") { e.preventDefault(); goTo(0); } });
+// Celular: deslizar (o tocar el borde derecho/izquierdo de la pantalla) pasa o vuelve una página.
+let touch0 = null;
+addEventListener("touchstart", e => {
+  touch0 = mobile && e.touches.length === 1 ? { x: e.touches[0].clientX, y: e.touches[0].clientY } : null;
+}, { passive: true });
+addEventListener("touchmove", e => { if (touch0 && !$("#member-photo-help").open) e.preventDefault(); }, { passive: false });
+addEventListener("touchend", e => {
+  if (!touch0) return;
+  const dx = e.changedTouches[0].clientX - touch0.x, dy = e.changedTouches[0].clientY - touch0.y;
+  touch0 = null;
+  if (Math.max(Math.abs(dx), Math.abs(dy)) < 30) return;            // fue un toque: lo resuelve el click
+  goTo(Math.round(target) - Math.sign(Math.abs(dx) > Math.abs(dy) ? dx : dy));
+});
+document.addEventListener("click", e => {
+  if (!mobile || !e.target.closest("#stage") || e.target.closest("a,button,label,input,dialog")) return;
+  goTo(Math.round(target) + (e.clientX > innerWidth / 2 ? 1 : -1));
+});
 const rebuild = () => { const k = target; build(); scrollTo(0, Math.min(k, T) * perFlip); };
 addEventListener("resize", rebuild);
 mq.addEventListener("change", rebuild);

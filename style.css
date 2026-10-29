@@ -90,12 +90,8 @@ p{font-size:.92em}
 @keyframes bob{50%{transform:translate(-50%,6px)}}
 
 @media (max-width:760px){
-  :root{--w:min(88vw, 62vh)}
-  .book{width:var(--w)}
-  .leaf{left:0}
-  .board.r{left:-3%;width:106%}.board.l{display:none}
+  :root{--w:min(86vw, 60vh)}            /* una página casi a ancho completo; la vecina asoma a los costados */
   .face{font-size:calc(var(--w)/20)}
-  .face.front,.face.back{border-radius:6px}
   h2{font-size:1.8em}
   .dots{right:.4rem}
   .dots button{width:.6rem;height:.6rem}
@@ -167,7 +163,6 @@ p{text-shadow:0 0 .6px rgba(29,23,16,.5)}
 .cover .orn *{fill:none;stroke:#e0a800;stroke-width:2.2;filter:drop-shadow(0 -1px 0 rgba(0,0,0,.7)) drop-shadow(0 1px 0 rgba(255,235,160,.3))}
 .cover .btn{background:none;border:2px solid #d4a514;color:#ffd60a;margin-top:.8em;padding:.8em 1.2em}
 .cover .btn:hover{background:#ffd60a;color:#2e1608}
-@media (max-width:760px){.board.r{left:-3%;width:106%}.pages.l,.pages.r{display:none}.ribbon{display:none}}
 
 /* ===== todo en clave realista: papel, cuero, latón, cera ===== */
 .kicker,.card time,.pnum{font-family:Georgia,serif;font-style:italic;letter-spacing:.12em;text-transform:none;font-size:.72em}
@@ -230,7 +225,6 @@ h3{font-family:Georgia,serif;font-weight:700;text-transform:none;font-variant:sm
 .face.back.cover{background:linear-gradient(270deg,transparent 4.6%,rgba(0,0,0,.6) 4.9%,rgba(255,215,160,.3) 5.5%,transparent 6%),url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' seed='3'/><feDiffuseLighting lighting-color='%23fff' surfaceScale='1.8'><feDistantLight azimuth='45' elevation='58'/></feDiffuseLighting></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>"),url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='.012 .02' numOctaves='3' seed='8'/><feDiffuseLighting lighting-color='%23fff' surfaceScale='4'><feDistantLight azimuth='45' elevation='58'/></feDiffuseLighting></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>"),radial-gradient(ellipse at 65% 25%,#8a5428,#4a2812 70%,#2e1608)!important;background-blend-mode:normal,multiply,multiply,normal!important}
 .stage::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:15;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' seed='9'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");mix-blend-mode:overlay;opacity:.22}
 .stage::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:14;background:radial-gradient(ellipse at 28% 18%,rgba(255,225,160,.22),transparent 55%),radial-gradient(ellipse at 50% 55%,transparent 55%,rgba(0,0,0,.55))}
-@media (max-width:760px){:root{--x0:0px}.shadow.l,.edge.l,.edge.el{display:none}}
 
 /* ===== objetos sobre la mesa ===== */
 .book{z-index:5}
@@ -295,7 +289,6 @@ body::before{background:radial-gradient(ellipse at 16% 26%,rgba(255,220,150,.30)
 /* ===== mundo 3D: mesa, objetos y libro comparten el mismo plano ===== */
 .world{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;will-change:transform}
 .world .book{position:absolute;left:calc(var(--w) * -1);top:calc(var(--h) / -2);z-index:auto}
-@media (max-width:760px){.world .book{left:calc(var(--w) / -2)}}
 .table{position:absolute;width:calc(var(--w) * 7.2);height:calc(var(--w) * 4.8);left:calc(var(--w) * -3.6);top:calc(var(--w) * -2.4);
   transform:translateZ(-8px);transform-style:preserve-3d;
   background:url(assets/gen/desk.jpg) center/cover,url(assets/photos/wood.jpg) center/cover;
@@ -371,7 +364,7 @@ body::before{background:#0b0603!important}
 .stage{perspective:none;background:#0b0603}
 /* La foto de la mesa vive en el mismo plano 3D que el libro: comparten inclinación, escala y perspectiva. */
 .table{display:block;width:300vw;height:300vh;left:-150vw;top:-150vh;
-  transform:translateZ(-8px) scale(calc(1.4 - .4 * var(--u,1)));
+  transform:translateZ(-8px) scale(var(--ts,1.4));
   background:linear-gradient(rgba(170,80,25,.24),rgba(170,80,25,.24)),url(assets/photos/wood.jpg) center/110vw auto repeat,#28180d}
 /* la foto cubre el centro; al alejar la cámara se funde con la madera que continúa alrededor */
 .table::before{content:"";position:absolute;width:100vw;height:100vh;left:calc(50% - 50vw);top:calc(50% - 50vh);
@@ -383,23 +376,28 @@ body::before{background:#0b0603!important}
 .table::after{display:none}
 /* decoraciones sobre la mesa: libertad (Gadsden), propiedad y dinero sano (oro), sabiduría (Sapere aude) */
 /* medidas reales: libro 15 cm = 1 w -> foto instantánea ~8,5 cm, nota ~7 cm, moneda de 20 kr ~2,3 cm */
-.table .item{opacity:calc(1 - var(--fc,0));filter:sepia(.3) saturate(1.15) brightness(.86) drop-shadow(.3vh .5vh .4vh rgba(0,0,0,.6))}
-.table .item.print{width:calc(var(--w) * .56);left:calc(50% + var(--w) * .85);top:calc(50% - var(--w) * .45);transform:rotate(7deg)}
-.table .item.coins{width:calc(var(--w) * .36);left:calc(50% + var(--w) * .85);top:calc(50% + var(--w) * .3);transform:rotate(-10deg)}
-.table .item.note{width:calc(var(--w) * .46);left:calc(50% - var(--w) * 1.08);top:calc(50% - var(--w) * .02);padding:calc(var(--w) * .05) calc(var(--w) * .03);transform:rotate(-6deg);text-align:center;
+/* .stuff anula el zoom de cámara de la foto: los objetos quedan a la misma escala que el libro. x/y/s/r los fija script.js según la pantalla (x,y,s en anchos de página). */
+.table .stuff{position:absolute;left:50%;top:50%;width:0;height:0;transform:scale(calc(1 / var(--ts,1)))}
+.table .item{position:absolute;left:calc(var(--w) * var(--x,0));top:calc(var(--w) * var(--y,0));width:calc(var(--w) * var(--s,.5));
+  transform:translate(-50%,-50%) rotate(calc(var(--r,0) * 1deg));opacity:calc(1 - var(--fc,0));
+  filter:sepia(.3) saturate(1.15) brightness(.86) drop-shadow(.3vh .5vh .4vh rgba(0,0,0,.6))}
+.table .item[data-fade="u"]{opacity:calc(1 - var(--u,0))}
+.table .item[hidden]{display:none!important}
+.table .item.note{padding:calc(var(--w) * .05) calc(var(--w) * .03);text-align:center;
   background:linear-gradient(rgba(250,240,214,.55),rgba(250,240,214,.55)),url(assets/photos/paper.jpg) center/cover;color:#2a1d0f;font-family:Georgia,serif;display:flex;flex-direction:column;gap:calc(var(--w) * .015)}
 .note b{font:italic 600 calc(var(--w) * .075)/1.1 Georgia,serif;letter-spacing:.02em}
 .note i{font-size:calc(var(--w) * .033);opacity:.75}
 .stage::before{background:radial-gradient(ellipse at 50% 50%,transparent 45%,rgba(0,0,0,.24))!important}
+.pager{display:none;position:absolute;bottom:1.1rem;left:50%;transform:translateX(-50%);z-index:20;margin:0;font:italic .85rem Georgia,serif;letter-spacing:.1em;color:#f1e4c0;text-shadow:0 2px 6px #000;transition:opacity .4s;pointer-events:none}
 .shadow{
   transform:translateZ(-6px) translate(2.5%,3%)!important;
   filter:blur(12px);
 }
 @media (max-width:760px){
   .table::before{background-position:20% center}
-  /* en móvil el mundo se escala a .6 -> .8: la foto compensa para seguir cubriendo la pantalla, y los objetos (fuera de cuadro) se ocultan */
-  .table{transform:translateZ(-8px) scale(calc(1.9 - .65 * var(--u,1)))}
-  .table .item{display:none}
+  .pager{display:block}
+  .dots{display:none}                 /* en celular se navega deslizando; el indicador "3 / 10" reemplaza a los puntos */
+  .hint{font-size:.85rem;letter-spacing:.04em;white-space:nowrap;bottom:2.2rem}
   .leaf .avatar{height:2em}
   .members-page .avatar{height:1.6em}
 }
