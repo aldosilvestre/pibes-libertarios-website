@@ -1,0 +1,856 @@
+{
+  "batchcomplete": true,
+  "query": {
+    "pages": [
+      {
+        "pageid": 9651991,
+        "ns": 6,
+        "title": "File:Funerary lion Louvre Ma2790.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 6493631,
+            "width": 2400,
+            "height": 1850,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Funerary_lion_Louvre_Ma2790.png/1920px-Funerary_lion_Louvre_Ma2790.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 1800,
+            "thumbheight": 1388,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/7/76/Funerary_lion_Louvre_Ma2790.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Funerary_lion_Louvre_Ma2790.png/1920px-Funerary_lion_Louvre_Ma2790.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 1800,
+              "height": 1388,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/7/76/Funerary_lion_Louvre_Ma2790.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Funerary_lion_Louvre_Ma2790.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Funerary_lion_Louvre_Ma2790.png",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=9651991",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2010-03-04 21:53:14",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "<div class=\"fn\">\n<div style=\"font-weight:bold;display:inline-block;\"><div style=\"display:inline-block\" dir=\"ltr\" lang=\"en\"><i>Funerary lion</i></div></div><div style=\"display: none;\">label QS:Len,\"Funerary lion\"</div><div style=\"display: none;\">label QS:Len-gb,\"Funerary lion-Ma 2790\"</div><div style=\"display: none;\">label QS:Lfr,\"Lion funéraire\"</div></div>",
+                "source": "commons-desc-page"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Retouched pictures|Funerary lion-Ma 2790|Self-published work|PD-self|Artworks with Wikidata item|Artworks with known accession number|Graphic Lab-fr|Files by -Strogoff-|Template Unknown (author)|Uploaded with derivativeFX|Artworks with Wikidata item missing author|Artworks with Wikidata item missing genre|Artworks main subject 3D work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Artist": {
+                "value": "<div class=\"fn value\">\n<table cellpadding=\"0\" cellspacing=\"0\"><tbody><tr><td>Unknown author<span style=\"display: none;\">Unknown author</span></td><td valign=\"top\"> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"https://www.wikidata.org/wiki/Q20012215#P170\" title=\"Edit this at Wikidata\"><img alt=\"Edit this at Wikidata\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"10\" height=\"10\" class=\"mw-file-element\" data-file-width=\"20\" data-file-height=\"20\"></a></span></td></tr></tbody></table></div>",
+                "source": "commons-desc-page"
+              },
+              "ImageDescription": {
+                "value": "Funerary lion. Marble, end of the 6th century or beginning of the 5th century BC. From the necropolis of Miletus.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "4 March 2010, 21:48 (UTC)",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<ul><li><a href=\"//commons.wikimedia.org/wiki/File:Funerary_lion_Louvre_Ma2790.jpg\" title=\"File:Funerary lion Louvre Ma2790.jpg\">Funerary_lion_Louvre_Ma2790.jpg</a></li></ul>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            },
+            "mime": "image/png"
+          }
+        ]
+      },
+      {
+        "pageid": 47641203,
+        "ns": 6,
+        "title": "File:Old paper4.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 3359369,
+            "width": 2300,
+            "height": 3148,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Old_paper4.jpg/1920px-Old_paper4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 1800,
+            "thumbheight": 2464,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Old_paper4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Old_paper4.jpg/1920px-Old_paper4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 1800,
+              "height": 2464,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Old_paper4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Old_paper4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Old_paper4.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=47641203",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2016-03-20 19:28:16",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Old paper4",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "PD-author|Background images|Template Unknown (author)|Paper textures",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Old paper.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-08-10 09:59:30",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"http://www.thedigitalyardsale.com/freebies/freebie-6-old-paper-textures/\">The Digital Yard Sale</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            },
+            "mime": "image/jpeg"
+          }
+        ]
+      },
+      {
+        "pageid": 58123805,
+        "ns": 6,
+        "title": "File:Don't Tread on Me (3912792425).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 1630538,
+            "width": 2848,
+            "height": 1602,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Don%27t_Tread_on_Me_%283912792425%29.jpg/1920px-Don%27t_Tread_on_Me_%283912792425%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 1800,
+            "thumbheight": 1013,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Don%27t_Tread_on_Me_%283912792425%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Don%27t_Tread_on_Me_%283912792425%29.jpg/1920px-Don%27t_Tread_on_Me_%283912792425%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 1800,
+              "height": 1013,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Don%27t_Tread_on_Me_%283912792425%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Don%27t_Tread_on_Me_%283912792425%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Don%27t_Tread_on_Me_(3912792425).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=58123805",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-04-18 02:56:30",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Don't Tread on Me (3912792425)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Sony DCR-SR300|Taxpayer March on Washington|Flickr images reviewed by FlickreviewR|Photographs of flags of Ohio|Files with coordinates missing SDC location of creation|Photographs of Gadsden flags|Photographs of flags of the United States at the United States Capitol",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "GPSLatitude": {
+                "value": "38.889897",
+                "source": "commons-desc-page"
+              },
+              "GPSLongitude": {
+                "value": "-77.009353",
+                "source": "commons-desc-page"
+              },
+              "GPSMapDatum": {
+                "value": "WGS-84",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Don't Tread on Me flag flying in front of US Capitol Building",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2009-09-13 00:07",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/nobamanomas/3912792425/\">Don't Tread on Me</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/42429118@N03\">NOBama NoMas</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            },
+            "mime": "image/jpeg"
+          }
+        ]
+      },
+      {
+        "pageid": 58392424,
+        "ns": 6,
+        "title": "File:Two 20kr gold coins.png",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5525125,
+            "width": 2427,
+            "height": 1268,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Two_20kr_gold_coins.png/1920px-Two_20kr_gold_coins.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 1800,
+            "thumbheight": 940,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Two_20kr_gold_coins.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Two_20kr_gold_coins.png/1920px-Two_20kr_gold_coins.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 1800,
+              "height": 940,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Two_20kr_gold_coins.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Two_20kr_gold_coins.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Two_20kr_gold_coins.png",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=58392424",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2017-04-30 10:31:27",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Two 20kr gold coins",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Scandinavian Monetary Union|Hatched coats of arms|Kronor|Self-published work|Gold coins of Denmark|Gold coins of Sweden",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "valued",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Two 20kr gold coins from the time of the Scandinavian Monetary Union.\nThe left one is Swedish, and the right one is Danish.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2013-12-08 22:09:46",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Anonimski\" title=\"User:Anonimski\">Anonimski</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            },
+            "mime": "image/png"
+          }
+        ]
+      },
+      {
+        "pageid": 22667206,
+        "ns": 6,
+        "title": "File:Banker Berlin brass.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 80725,
+            "width": 768,
+            "height": 1024,
+            "thumburl": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Banker_Berlin_brass.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "thumbwidth": 1800,
+            "thumbheight": 2400,
+            "thumbattribs": {
+              "src": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Banker_Berlin_brass.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 1800,
+              "height": 2400
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Banker_Berlin_brass.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Banker_Berlin_brass.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=22667206",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2012-11-13 15:33:57",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Banker Berlin brass",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Banker's lamps|Self-published work",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Banker´s lamp made of brass with 3 layer glass shed",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2010-01-01 00:01:33",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Axl0506&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Axl0506 (page does not exist)\">Axl0506</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY-SA 3.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution-Share Alike 3.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-sa-3.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            },
+            "mime": "image/jpeg"
+          }
+        ]
+      },
+      {
+        "pageid": 37312309,
+        "ns": 6,
+        "title": "File:Free antique leather book cover texture for layers (2978544161).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 5806544,
+            "width": 2848,
+            "height": 4272,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Free_antique_leather_book_cover_texture_for_layers_%282978544161%29.jpg/1920px-Free_antique_leather_book_cover_texture_for_layers_%282978544161%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 1800,
+            "thumbheight": 2700,
+            "responsiveUrls": {
+              "2": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Free_antique_leather_book_cover_texture_for_layers_%282978544161%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Free_antique_leather_book_cover_texture_for_layers_%282978544161%29.jpg/1920px-Free_antique_leather_book_cover_texture_for_layers_%282978544161%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 1800,
+              "height": 2700,
+              "srcset": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Free_antique_leather_book_cover_texture_for_layers_%282978544161%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Free_antique_leather_book_cover_texture_for_layers_%282978544161%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Free_antique_leather_book_cover_texture_for_layers_(2978544161).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=37312309",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2014-12-15 20:19:29",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Free antique leather book cover texture for layers (2978544161)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Leather|Book covers|Textures|Sepia photographs|Flickr images reviewed by FlickreviewR|Backgrounds|Brown textures|Flickr images missing SDC published in",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "<p>free texture\nThe book is over 120 years old. The photo however, is new :)\n</p>\nMy photos that have a <a rel=\"nofollow\" class=\"external text\" href=\"https://creativecommons.org/licenses/by/2.0/\">creative commons license</a> and are free for everyone to download, edit, alter and use as long as you give me,  \"D Sharon Pruitt\" credit as the original owner of the photo. Have fun and enjoy!",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2008-10-27 13:50",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/pinksherbet/2978544161/\">Free antique leather book cover texture for layers</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/40645538@N00\">Pink Sherbet Photography</a> from USA",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 2.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 2.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/2.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-2.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            },
+            "mime": "image/jpeg"
+          }
+        ]
+      },
+      {
+        "pageid": 67443461,
+        "ns": 6,
+        "title": "File:Black Titanium Frame Eyeglasses, JINS MTF-16S-151B, 1.jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 4048418,
+            "width": 5184,
+            "height": 3456,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Black_Titanium_Frame_Eyeglasses%2C_JINS_MTF-16S-151B%2C_1.jpg/1920px-Black_Titanium_Frame_Eyeglasses%2C_JINS_MTF-16S-151B%2C_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 1800,
+            "thumbheight": 1200,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Black_Titanium_Frame_Eyeglasses%2C_JINS_MTF-16S-151B%2C_1.jpg/3840px-Black_Titanium_Frame_Eyeglasses%2C_JINS_MTF-16S-151B%2C_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Black_Titanium_Frame_Eyeglasses%2C_JINS_MTF-16S-151B%2C_1.jpg/1920px-Black_Titanium_Frame_Eyeglasses%2C_JINS_MTF-16S-151B%2C_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 1800,
+              "height": 1200,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Black_Titanium_Frame_Eyeglasses%2C_JINS_MTF-16S-151B%2C_1.jpg/3840px-Black_Titanium_Frame_Eyeglasses%2C_JINS_MTF-16S-151B%2C_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Black_Titanium_Frame_Eyeglasses%2C_JINS_MTF-16S-151B%2C_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Black_Titanium_Frame_Eyeglasses,_JINS_MTF-16S-151B,_1.jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=67443461",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2018-03-18 00:11:19",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Black Titanium Frame Eyeglasses, JINS MTF-16S-151B, 1",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Titanium-based alloys|JINS|Self-published work|Black glasses|Glasses on white background|Full frame metal glasses",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "A black frame eyeglasses. The frame is made of titanium, and the hinge is made of beta-titanium alloy.<sup id=\"cite_ref-1\" class=\"reference\"><a href=\"#cite_note-1\"><span class=\"cite-bracket\">[</span>1<span class=\"cite-bracket\">]</span></a></sup> The product code is MTF-16S-151B 1, JINS.\n<ol class=\"references\">\n<li id=\"cite_note-1\"><span class=\"mw-cite-backlink\"><a href=\"#cite_ref-1\">↑</a></span> <span class=\"reference-text\"><a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20200206081209/https://www.jins.com/jp/item/MTF-16S-151.html\">【Wide Rim Titanium】ワイドリムチタンMTF-16S-151の商品詳細</a> <span style=\"font-size: 0.95em; font-weight: bold; color:#555; position: relative;\">(japanese)</span>. JINS. Archived from <a rel=\"nofollow\" class=\"external text\" href=\"https://www.jins.com/jp/item/MTF-16S-151.html\">the original</a> on <span class=\"mw-formatted-date\" title=\"2020-02-06\">2020-02-06</span>. Retrieved on <span class=\"mw-formatted-date\" title=\"2018-03-18\">2018-03-18</span>.</span>\n</li>\n</ol>",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2018-02-12 14:53:14",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Yapparina\" title=\"User:Yapparina\">Yapparina</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Zero, Public Domain Dedication",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            },
+            "mime": "image/jpeg"
+          }
+        ]
+      },
+      {
+        "pageid": 181536086,
+        "ns": 6,
+        "title": "File:Old wooden dark board (54901780396).jpg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "size": 18545978,
+            "width": 6000,
+            "height": 4000,
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Old_wooden_dark_board_%2854901780396%29.jpg/1920px-Old_wooden_dark_board_%2854901780396%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 1800,
+            "thumbheight": 1200,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Old_wooden_dark_board_%2854901780396%29.jpg/3840px-Old_wooden_dark_board_%2854901780396%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Old_wooden_dark_board_%2854901780396%29.jpg/1920px-Old_wooden_dark_board_%2854901780396%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 1800,
+              "height": 1200,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Old_wooden_dark_board_%2854901780396%29.jpg/3840px-Old_wooden_dark_board_%2854901780396%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Old_wooden_dark_board_%2854901780396%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Old_wooden_dark_board_(54901780396).jpg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=181536086",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2026-01-09 21:31:11",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Old wooden dark board (54901780396)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "Taken with Nikon D5300|Flickr images reviewed by FlickreviewR 2|Photographs taken on 2022-10-16|Wood textures (wallpapers)|Flickr images missing SDC published in|Photographs by Andrew Siwiec",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "High quality wooden surface texture as a background for rustic projects.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "Taken on 16 October 2022, 11:38",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/andrewsiwiec/54901780396/\">Old wooden dark board</a>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/194923002@N08\">AS Photography</a> from Poland",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "CC BY 4.0",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Creative Commons Attribution 4.0",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "true",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "LicenseUrl": {
+                "value": "https://creativecommons.org/licenses/by/4.0",
+                "source": "commons-desc-page"
+              },
+              "Copyrighted": {
+                "value": "True",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "cc-by-4.0",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            },
+            "mime": "image/jpeg"
+          }
+        ]
+      }
+    ]
+  }
+}
