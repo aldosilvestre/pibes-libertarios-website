@@ -237,6 +237,7 @@ function layoutDecor(wpx) {
 
 // Cada vuelta dura ~1.3 s con aceleración y frenado, aunque el scroll sea un solo gesto
 function goTo(p) {
+  if ($("#splash")) return;                       // mientras se ve la pantalla de carga no se pasan páginas
   const to = clamp(p, 0, T) * perFlip, from = scrollY;
   if (Math.abs(to - from) < 1) return;
   const d = reduce ? 1 : (mobile ? 950 : 1300) + Math.abs(to - from) / perFlip * 220;
@@ -359,3 +360,17 @@ build();
 const m = location.hash.match(/p=([\d.]+)/);
 scrollTo(0, m ? clamp(+m[1], 0, T) * perFlip : 0);
 requestAnimationFrame(loop);
+
+// Pantalla de carga: se va cuando están las imágenes grandes de la escena (o a los 8 s, para no trabar a nadie con mala conexión).
+const SPLASH_MIN = 900, SPLASH_MAX = 8000;
+const preload = src => new Promise(done => { const img = new Image(); img.onload = img.onerror = done; img.src = src; });
+Promise.race([
+  Promise.all([document.fonts.ready, new Promise(r => setTimeout(r, SPLASH_MIN)),
+    ...["generated-images/ig_0573967fb04bdacc016ae2c77e455487d280e5854a844b25e2.png", "assets/photos/leather.jpg",
+        "assets/photos/paper.jpg", "assets/brand/emblem-mask.png"].map(preload)]),
+  new Promise(r => setTimeout(r, SPLASH_MAX)),
+]).then(() => {
+  const splash = $("#splash");
+  splash.classList.add("done");
+  setTimeout(() => splash.remove(), reduce ? 0 : 750);
+});

@@ -406,6 +406,23 @@ body::before{background:#0b0603!important}
 .colophon{margin-top:auto;font-size:.72em;line-height:1.5;display:flex;flex-direction:column;gap:.6em}
 .colophon ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:.25em}
 .colophon a{color:inherit;text-decoration-color:rgba(70,45,20,.4)}
+/* pantalla de carga: escudo estampado en latón con un brillo que lo recorre, sobre cuero oscuro iluminado por la lámpara */
+.splash{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;text-align:center;
+  background:radial-gradient(ellipse at 50% 38%,rgba(255,200,110,.18),transparent 55%),radial-gradient(ellipse at center,#2a170b,#0b0603 78%);
+  color:#d1b77c;font-family:Georgia,"Times New Roman",serif;transition:opacity .7s ease,visibility .7s}
+.splash.done{opacity:0;visibility:hidden}
+.splash p{margin:0}
+.splash-emblem{width:min(46vw,32vh);aspect-ratio:1;margin-bottom:.4rem;filter:drop-shadow(0 -1px 0 rgba(0,0,0,.75)) drop-shadow(0 8px 20px rgba(0,0,0,.65))}
+.splash-emblem i{display:block;width:100%;height:100%;background:linear-gradient(115deg,#87632f 0%,#c9ab6c 30%,#fff1c4 42%,#c9ab6c 54%,#94713d 100%) 0 0/260% 100%;
+  -webkit-mask:url(assets/brand/emblem-mask.png) center/contain no-repeat;mask:url(assets/brand/emblem-mask.png) center/contain no-repeat;animation:splash-foil 2.6s ease-in-out infinite}
+@keyframes splash-foil{from{background-position:100% 0}to{background-position:-60% 0}}
+.splash-name{font-size:.8rem;letter-spacing:.32em;text-transform:uppercase;color:#b89a58}
+.splash-bar{position:relative;width:min(62vw,260px);height:2px;overflow:hidden;background:rgba(209,183,124,.18)}
+.splash-bar::after{content:"";position:absolute;inset:0;width:40%;background:linear-gradient(90deg,transparent,#e3c98c,transparent);animation:splash-bar 1.5s ease-in-out infinite}
+@keyframes splash-bar{from{transform:translateX(-100%)}to{transform:translateX(260%)}}
+.splash-text{font-style:italic;font-size:1rem;color:#f1e4c0}
+.splash-motto{font-size:.78rem;font-style:italic;color:rgba(209,183,124,.6);margin-top:.6rem}
+@media (prefers-reduced-motion:reduce){.splash-emblem i,.splash-bar::after{animation:none}.splash{transition:none}}
 .pager{display:none;position:absolute;bottom:1.1rem;left:50%;transform:translateX(-50%);z-index:20;margin:0;font:italic .85rem Georgia,serif;letter-spacing:.1em;color:#f1e4c0;text-shadow:0 2px 6px #000;transition:opacity .4s;pointer-events:none}
 .shadow{
   transform:translateZ(-6px) translate(2.5%,3%)!important;
